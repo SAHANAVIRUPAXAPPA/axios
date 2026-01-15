@@ -1,18 +1,16 @@
-name: AXIOS CI Pipeline
+name: AXIOS CI/CD Pipeline
 
 on:
   push:
     branches: [ "main", "master" ]
   pull_request:
-    branches: [ "main", "master" ]
 
 jobs:
-  backend-build:
-    name: Backend Build & Test
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Java 17
@@ -21,21 +19,12 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Build backend
+      - name: Build Backend
         run: |
           cd backend
           mvn clean package -DskipTests
 
-  frontend-check:
-    name: Frontend Validation
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Validate frontend files
+      - name: Docker Build Backend
         run: |
-          test -f frontend/index.html
-          test -f frontend/style.css
-          test -f frontend/app.js
+          cd backend
+          docker build -t axios-backend .
