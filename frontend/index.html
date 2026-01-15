@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AXIOS Credit Score</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <h1>AXIOS Credit Scoring System</h1>
+    <p>Instant Credit Risk Assessment</p>
+  </header>
+
+  <section class="card">
+    <h2>Check Your Credit Score</h2>
+
+    <input type="text" id="userId" placeholder="Enter User ID (UUID)" />
+
+    <button onclick="checkScore()">Check Score</button>
+
+    <div id="result" class="result hidden">
+      <p><strong>Score:</strong> <span id="score"></span></p>
+      <p><strong>Risk Level:</strong> <span id="risk"></span></p>
+      <p><strong>Base Score:</strong> <span id="base"></span></p>
+      <p><strong>Variable Score:</strong> <span id="variable"></span></p>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

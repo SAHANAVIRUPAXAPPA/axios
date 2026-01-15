@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.hero {
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.card {
+  background: white;
+  width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.card input {
+  width: 90%;
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.card button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #4ca1af;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.card button:hover {
+  background: #357f89;
+}
+
+.result {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
